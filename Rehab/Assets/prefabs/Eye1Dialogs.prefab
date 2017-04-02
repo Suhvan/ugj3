@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4505319046870066}
   - component: {fileID: 114499099880008798}
   m_Layer: 0
-  m_Name: DialogSystem
+  m_Name: Eye1Dialogs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53,5 +53,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dlPrefab: {fileID: 114000013794565830, guid: 553d26463ca727f4dbd53805305e4151, type: 2}
   StartDialog:
-  - start-1
-  EndDialog: []
+  - eye-1-start
+  EndDialog:
+  - eye-1-end
