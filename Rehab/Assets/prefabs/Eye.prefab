@@ -172,8 +172,8 @@ MonoBehaviour:
   topVeko: {fileID: 1042143700513982}
   botVeko: {fileID: 1519532899795164}
   closingSpeed: 2
-  openingImpulse: 5
-  openingDuration: 0.5
+  openingImpulse: 4
+  openingDuration: 0.75
   declineCurve:
     serializedVersion: 2
     m_Curve:
@@ -192,6 +192,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+  yStopValue: 5
 --- !u!212 &212534183739081746
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -224,7 +225,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b78e5fc31254d0942a688dbef7b08996, type: 3}
-  m_Color: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  m_Color: {r: 0.15294118, g: 0.15294118, b: 0.15294118, a: 1}
   m_FlipX: 0
   m_FlipY: 0
 --- !u!212 &212995205226135888
@@ -259,6 +260,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b78e5fc31254d0942a688dbef7b08996, type: 3}
-  m_Color: {r: 0.6666667, g: 0.6666667, b: 0.6666667, a: 1}
+  m_Color: {r: 0.15294118, g: 0.15294118, b: 0.15294118, a: 1}
   m_FlipX: 0
   m_FlipY: 0

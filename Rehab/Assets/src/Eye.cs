@@ -22,13 +22,17 @@ public class Eye : MonoBehaviour {
 	[SerializeField]
 	AnimationCurve declineCurve;
 
+	[SerializeField]
+	float yStopValue;
+
 	float timeSinceOpen = int.MaxValue;
-	
+
+	public bool Completed { get; private set; }
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+		Completed = false;
+    }
 
 	float GetOpenSpeed()
 	{
@@ -48,8 +52,11 @@ public class Eye : MonoBehaviour {
 	}	
 	
 	void Update () {
-		var speed = closingSpeed;
 
+		if (Completed)
+			return;
+
+		var speed = closingSpeed;
 		speed-=GetOpenSpeed();
 
 		float step = speed * Time.deltaTime;
@@ -63,6 +70,8 @@ public class Eye : MonoBehaviour {
 			step = -step;
 			topVeko.transform.localPosition = Vector3.MoveTowards(topVeko.transform.localPosition, Vector3.up * 10, step);
 			botVeko.transform.localPosition = Vector3.MoveTowards(botVeko.transform.localPosition, Vector3.down  * 10, step);
+			if (topVeko.transform.localPosition.y > yStopValue)
+				Completed = true;
 		}
 
 	}
