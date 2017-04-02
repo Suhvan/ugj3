@@ -17,6 +17,9 @@ public class Hand : MonoBehaviour {
 	float yMin;
 
 	[SerializeField]
+	float MaxDistance;	
+
+	[SerializeField]
 	float resist;
 
 	[SerializeField]
@@ -24,6 +27,9 @@ public class Hand : MonoBehaviour {
 
 	[SerializeField]
 	GameObject backGround;
+
+	[SerializeField]
+	AnimationCurve resistCurve;
 
 	bool m_directingUp;
 
@@ -64,8 +70,11 @@ public class Hand : MonoBehaviour {
 		else
 			scrolVal = Input.GetAxis("Mouse Y");
 
-		scrolVal /= resist;
-
+		if (scrolVal == 0)
+			return;
+		var distance = transform.position.y - yMin - backGround.transform.position.y;
+        scrolVal /= 1 + resist  * resistCurve.Evaluate(distance / MaxDistance);
+		Debug.Log(string.Format("Cur resistL {0}", 1 + resist * resistCurve.Evaluate(distance / MaxDistance)));
 		if (directingUp)
 		{
 			if (scrolVal < 0)
