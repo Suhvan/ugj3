@@ -27,3 +27,4 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+build/rehub_Data/output_log.txt

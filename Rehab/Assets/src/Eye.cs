@@ -36,7 +36,7 @@ public class Eye : MonoBehaviour {
 	{
 		get
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.anyKeyDown)
 			{
 				timeSinceOpen = 0;
 			}
