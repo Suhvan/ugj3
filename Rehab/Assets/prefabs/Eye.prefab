@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topVeko: {fileID: 1042143700513982}
   botVeko: {fileID: 1519532899795164}
-  closingSpeed: 2
+  closingSpeed: 3
   openingImpulse: 4
   openingDuration: 0.75
   declineCurve:
@@ -188,6 +188,24 @@ MonoBehaviour:
       value: 0
       inSlope: -3.1839356
       outSlope: -3.1839356
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  resistCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2

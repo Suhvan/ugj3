@@ -23,41 +23,55 @@ public class Eye : MonoBehaviour {
 	AnimationCurve declineCurve;
 
 	[SerializeField]
+	AnimationCurve resistCurve;
+
+	[SerializeField]
 	float yStopValue;
 
 	float timeSinceOpen = int.MaxValue;
 
 	public bool Completed { get; private set; }
 
-	// Use this for initialization
-	void Start () {
-		Completed = false;
-    }
-
-	float GetOpenSpeed()
+	float openinigSpeed
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{			
-			timeSinceOpen = 0;
-		}
-
-		if (timeSinceOpen > openingDuration)
+		get
 		{
-			return 0;			
-        }
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				timeSinceOpen = 0;
+			}
 
-		timeSinceOpen += Time.deltaTime;
-		return declineCurve.Evaluate(timeSinceOpen / openingDuration) * openingImpulse;
-		
-	}	
-	
+			if (timeSinceOpen > openingDuration)
+			{
+				return 0;
+			}
+
+			timeSinceOpen += Time.deltaTime;
+			return declineCurve.Evaluate(timeSinceOpen / openingDuration) * openingImpulse;
+		}
+	}
+
+	float resist
+	{
+		get
+		{
+			return resistCurve.Evaluate(topVeko.transform.localPosition.y / yStopValue);
+        }
+	}
+
+	// Use this for initialization
+	void Start()
+	{
+		Completed = false;
+	}
+
 	void Update () {
 
 		if (Completed)
 			return;
 
-		var speed = closingSpeed;
-		speed-=GetOpenSpeed();
+		var speed = closingSpeed * resist;
+		speed-= openinigSpeed;
 
 		float step = speed * Time.deltaTime;
 		if (step > 0)
@@ -68,9 +82,9 @@ public class Eye : MonoBehaviour {
 		else
 		{
 			step = -step;
-			topVeko.transform.localPosition = Vector3.MoveTowards(topVeko.transform.localPosition, Vector3.up * 10, step);
-			botVeko.transform.localPosition = Vector3.MoveTowards(botVeko.transform.localPosition, Vector3.down  * 10, step);
-			if (topVeko.transform.localPosition.y > yStopValue)
+			topVeko.transform.localPosition = Vector3.MoveTowards(topVeko.transform.localPosition, Vector3.up * yStopValue, step);
+			botVeko.transform.localPosition = Vector3.MoveTowards(botVeko.transform.localPosition, Vector3.down  * yStopValue, step);
+			if (topVeko.transform.localPosition.y >= yStopValue)
 				Completed = true;
 		}
 
