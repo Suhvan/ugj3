@@ -17,7 +17,7 @@ public class DialogsCore : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		
-    }
+    }	
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,14 +25,14 @@ public class DialogsCore : MonoBehaviour {
 
 	
 
-	public void OnGameStart()
+	public void OnGameStart(System.Action onComplete = null)
 	{
-		CreateDialog(new Queue<string>(StartDialog));
+		CreateDialog(new Queue<string>(StartDialog), onComplete);
     }
 
-	public void OnGameEnd()
+	public void OnGameEnd(System.Action onComplete)
 	{
-		CreateDialog(new Queue<string>(EndDialog));
+		CreateDialog(new Queue<string>(EndDialog), onComplete);
 	}
 
 	public void CreateDialog(string code)
@@ -41,10 +41,10 @@ public class DialogsCore : MonoBehaviour {
 		dialog.Init(code, null);
 	}
 
-	public void CreateDialog(Queue<string> dialogQueue)
+	public void CreateDialog(Queue<string> dialogQueue, System.Action onComplete = null )
 	{
 		var dialog = Instantiate(dlPrefab);
-		dialog.Init(dialogQueue.Dequeue(), dialogQueue);
+		dialog.Init(dialogQueue.Dequeue(), dialogQueue, onComplete);
 	}
 
 	public AudioClip GetClip(string clipName)

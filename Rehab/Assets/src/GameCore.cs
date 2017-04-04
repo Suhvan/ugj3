@@ -1,21 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameCore : MonoBehaviour {
+		
+	public IGameStage CurrentStage;
 
-	public Eye Eye;
-	public DialogsCore dialogSystem;
+	public DialogsCore DialogSystem;
 	public static GameCore instance { private set; get; }
 
+	[SerializeField]
+	StageType m_curStageType;
+
 	bool stageCompleted;
+	
+	void Awake()
+	{
+		if (instance != null)
+			Destroy(this.gameObject);
+		else
+			instance = this;
+		DontDestroyOnLoad(transform.gameObject);
+	}	
+
+	void LoadStage(StageType stg)
+	{
+		m_curStageType = stg;		
+		SceneManager.LoadScene(StageTypeHelper.TypeToScene(stg));
+	}
 
 	// Use this for initialization
-	void Start () {
-		instance = this;
-		dialogSystem.OnGameStart();
-		stageCompleted = false;
+	void Start () {				
     }
+
+	void InitStage()
+	{
+		DialogSystem.OnGameStart();
+		stageCompleted = false;
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -23,11 +46,52 @@ public class GameCore : MonoBehaviour {
 		if (stageCompleted)
 			return;
 
-		if(Eye.Completed)
+		if(CurrentStage.Completed)
 		{
 			stageCompleted = true;
-			dialogSystem.OnGameEnd();
+			DialogSystem.OnGameEnd(()=>			
+			{
+				GoNextStage();
+			});
+			
+        }
+	}
+
+	void GoNextStage()
+	{
+		switch (m_curStageType)
+		{
+			case StageType.HandStage:
+				LoadStage(StageType.HelpStage);
+				return;
 		}
 	}
-	
+
+	void OnEnable()
+	{
+		
+		SceneManager.sceneLoaded += OnLevelFinishedLoading;
+	}
+
+	void OnDisable()
+	{
+		SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+	}
+
+	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+	{
+		DialogSystem = FindObjectOfType<DialogsCore>();
+		switch (m_curStageType)
+		{
+			case StageType.HandStage:
+				CurrentStage = FindObjectOfType<Hand>();
+				break;
+			default:
+			case StageType.HelpStage:
+				CurrentStage = FindObjectOfType<Eye>();
+				break;
+		}
+		InitStage();
+    }
+
 }

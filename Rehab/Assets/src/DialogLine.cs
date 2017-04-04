@@ -12,15 +12,18 @@ public class DialogLine : MonoBehaviour {
 
 	private string dialogCode;
 
-	private Queue<string> DialogQueue; 
+	private Queue<string> DialogQueue;
 
-	public void Init(string code, Queue<string> dialogQueue)
+	private System.Action onSequenceEnd;
+
+	public void Init(string code, Queue<string> dialogQueue, System.Action onSequenceEnd = null)
 	{
 		dialogCode = code;
-		audioSource.clip = GameCore.instance.dialogSystem.GetClip(dialogCode);        
-		text.text = GameCore.instance.dialogSystem.GetText(dialogCode);
+		audioSource.clip = GameCore.instance.DialogSystem.GetClip(dialogCode);        
+		text.text = GameCore.instance.DialogSystem.GetText(dialogCode);
 		DialogQueue = dialogQueue;
 		transform.parent = Camera.main.transform;
+		this.onSequenceEnd = onSequenceEnd;
     }
 
 	// Use this for initialization
@@ -37,8 +40,10 @@ public class DialogLine : MonoBehaviour {
 		yield return new WaitForSeconds(seconds + 0.5f);
 		Destroy(gameObject);
 		if (DialogQueue != null && DialogQueue.Count > 0)
-			GameCore.instance.dialogSystem.CreateDialog(DialogQueue);
-	}
+			GameCore.instance.DialogSystem.CreateDialog(DialogQueue);
+		else if (onSequenceEnd != null)
+			onSequenceEnd();
+    }
 	
 	// Update is called once per frame
 	void Update () {
