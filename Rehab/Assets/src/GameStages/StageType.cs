@@ -18,6 +18,8 @@ public static class StageTypeHelper
 			default:
 			case StageType.HelpStage:
 				return "first";
+			case StageType.HospitalStage:
+				return "hospital";
 		}
 	}
 
@@ -30,7 +32,9 @@ public static class StageTypeHelper
 			default:
 			case "first":
 				return StageType.HelpStage;
-		}
+			case "hospital":
+				return StageType.HospitalStage;
+        }
 	}
 }
 

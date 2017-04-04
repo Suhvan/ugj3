@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameCore : MonoBehaviour {
-		
-	public IGameStage CurrentStage;
 
-	public DialogsCore DialogSystem;
+	public IGameStage CurrentStage { private set; get; }
+	public DialogsCore DialogSystem { private set; get; }
+
 	public static GameCore instance { private set; get; }
 
 	[SerializeField]
@@ -63,6 +63,9 @@ public class GameCore : MonoBehaviour {
 		{
 			case StageType.HandStage:
 				LoadStage(StageType.HelpStage);
+				return;
+			case StageType.HelpStage:
+				LoadStage(StageType.HospitalStage);
 				return;
 		}
 	}
