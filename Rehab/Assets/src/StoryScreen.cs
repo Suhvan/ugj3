@@ -18,7 +18,6 @@ public class StoryScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		Hide(null);
     }
 	
 	// Update is called once per frame

@@ -90,6 +90,9 @@ public class Hand : IGameStage
 	// Update is called once per frame
 	void FixedUpdate ()
 	{
+		if (Completed)
+			return;
+
 		if (GameCore.instance.stageState != CoreState.InProgress)
 			return;
 

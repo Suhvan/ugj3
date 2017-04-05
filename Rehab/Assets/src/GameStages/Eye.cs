@@ -30,6 +30,9 @@ public class Eye : IGameStage
 	[SerializeField]
 	float yStopValue;
 
+	[SerializeField]
+	EyeDependent eyeDependent;
+
 	float timeSinceOpen = int.MaxValue;
 
 
@@ -73,10 +76,17 @@ public class Eye : IGameStage
 		if (Completed)
 			return;
 
+		if (GameCore.instance.stageState != CoreState.InProgress)
+			return;
+
 		var speed = closingSpeed * resist;
 		speed-= openinigSpeed;
 
 		float step = speed * Time.deltaTime;
+
+		if (eyeDependent != null)
+			eyeDependent.ApplyStep(step);
+
 		if (step > 0)
 		{
 			topVeko.transform.localPosition = Vector3.MoveTowards(topVeko.transform.localPosition, Vector3.zero, step);

@@ -21,8 +21,10 @@ public class DialogsCore : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
-    }	
+	void Awake () {
+		StartScreen.Hide(null);
+		EndScreen.Hide(null);
+	}	
 	
 	// Update is called once per frame
 	void Update () {
