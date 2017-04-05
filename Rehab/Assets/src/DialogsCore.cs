@@ -11,27 +11,36 @@ public class DialogsCore : MonoBehaviour {
 	private List<string> StartDialog;
 
 	[SerializeField]
+	private StoryScreen StartScreen;
+
+	[SerializeField]
 	private List<string> EndDialog;
+
+	[SerializeField]
+	private StoryScreen EndScreen;
 
 
 	// Use this for initialization
 	void Start () {
-		
     }	
 	
 	// Update is called once per frame
 	void Update () {
     }
 
-	
+
 
 	public void OnGameStart(System.Action onComplete = null)
 	{
-		CreateDialog(new Queue<string>(StartDialog), onComplete);
+		StartScreen.Show();
+		CreateDialog(new Queue<string>(StartDialog), () => {
+			StartScreen.Hide(onComplete);
+        });
     }
 
 	public void OnGameEnd(System.Action onComplete)
 	{
+		EndScreen.Show();
 		CreateDialog(new Queue<string>(EndDialog), onComplete);
 	}
 

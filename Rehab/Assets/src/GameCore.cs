@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum CoreState
+{
+	Intro,
+	InProgress,
+	Completed
+}
+
 public class GameCore : MonoBehaviour {
 
 	public IGameStage CurrentStage { private set; get; }
@@ -13,7 +20,7 @@ public class GameCore : MonoBehaviour {
 	[SerializeField]
 	StageType m_curStageType;
 
-	bool stageCompleted;
+	public CoreState stageState { get; private set; }
 	
 	void Awake()
 	{
@@ -36,19 +43,22 @@ public class GameCore : MonoBehaviour {
 
 	void InitStage()
 	{
-		DialogSystem.OnGameStart();
-		stageCompleted = false;
+		DialogSystem.OnGameStart(()=>
+		{
+			stageState = CoreState.InProgress;
+		});
+		stageState =  CoreState.Intro;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (stageCompleted)
+		if (stageState!= CoreState.InProgress)
 			return;
 
 		if(CurrentStage.Completed)
 		{
-			stageCompleted = true;
+			stageState = CoreState.Completed;
 			DialogSystem.OnGameEnd(()=>			
 			{
 				GoNextStage();
@@ -71,8 +81,7 @@ public class GameCore : MonoBehaviour {
 	}
 
 	void OnEnable()
-	{
-		
+	{		
 		SceneManager.sceneLoaded += OnLevelFinishedLoading;
 	}
 

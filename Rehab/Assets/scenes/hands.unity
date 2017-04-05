@@ -108,12 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &144329848 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114364097052474716, guid: 594f8dcd74991104c92846f9e0798564,
-    type: 2}
-  m_PrefabInternal: {fileID: 910117382}
-  m_Script: {fileID: 11500000, guid: 6bec9733a643209429309f292c40d7ae, type: 3}
 --- !u!1 &240318979
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,8 +486,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95259a4fe9f59164788a775d7824bb34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentStage: {fileID: 144329848}
-  DialogSystem: {fileID: 0}
   m_curStageType: 0
 --- !u!4 &1476693654
 Transform:
