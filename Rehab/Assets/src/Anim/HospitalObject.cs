@@ -53,7 +53,8 @@ class HospitalObject : MonoBehaviour
 	{
 		var rand = Random.Range(0, animCount).ToString();
 		Debug.Log("Result " + rand);
-		anim.Play(rand);
+		anim.Play("Empty");
+		anim.Play(rand);		
 		yield return null;
 		var info = anim.GetCurrentAnimatorStateInfo(0);
 		randomDelay += info.length;
