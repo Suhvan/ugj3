@@ -44,6 +44,10 @@ public class Hand : IGameStage
 	[SerializeField]
 	Transform target;
 
+	[SerializeField]
+	AudioSource pain;
+
+
 	HandState m_state;
 	float m_targetDistance;
 
@@ -95,6 +99,9 @@ public class Hand : IGameStage
 
 		if (GameCore.instance.stageState != CoreState.InProgress)
 			return;
+
+		if (!pain.isPlaying)
+			pain.Play();
 
 		switch (State)
 		{
