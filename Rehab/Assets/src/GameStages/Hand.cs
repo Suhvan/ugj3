@@ -95,7 +95,10 @@ public class Hand : IGameStage
 	void FixedUpdate ()
 	{
 		if (Completed)
+		{
+			pain.Stop();
 			return;
+		}
 
 		if (GameCore.instance.stageState != CoreState.InProgress)
 			return;
