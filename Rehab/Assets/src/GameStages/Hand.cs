@@ -93,6 +93,46 @@ public class Hand : IGameStage
 			return transform.position.y - yMin - backGround.transform.position.y;
         }
 	}
+
+	int tutStage = 0;
+
+	private void ProceedTutorial()
+	{
+		if (tutStage == 0)
+		{
+			tutStage++;
+			Tutorial.instance.StartTutorial(Tutorial.TutType.MouseUp);
+		}
+
+		if (tutStage == 1)
+		{
+			if (State == HandState.WaitingGrab)
+			{
+				tutStage++;
+                Tutorial.instance.StopTutorial(Tutorial.TutType.MouseUp);
+				Tutorial.instance.StartTutorial(Tutorial.TutType.SpaceHold);
+			}
+		}
+
+		if (tutStage == 2)
+		{
+			if (State == HandState.Grabing)
+			{
+				tutStage++;
+				Tutorial.instance.StopTutorial(Tutorial.TutType.SpaceHold);
+				Tutorial.instance.StartTutorial(Tutorial.TutType.MouseDown);
+			}
+        }
+
+		if (tutStage == 3)
+		{
+			if (State != HandState.Grabing)
+			{
+				tutStage++;
+				Tutorial.instance.StopTutorial(Tutorial.TutType.MouseDown);				
+			}
+		}
+	}
 	
 	// Update is called once per frame
 	void FixedUpdate ()
@@ -109,6 +149,8 @@ public class Hand : IGameStage
 
 		if (!pain.isPlaying)
 			pain.Play();
+
+		ProceedTutorial();
 
 		switch (State)
 		{
