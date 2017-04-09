@@ -14,8 +14,9 @@ public class ColorDependent : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (host != null && ColorReference.Instance != null)
-		{
-			host.color = ColorReference.Instance.RefColor;
+		{	
+			var newColor = new Color(ColorReference.Instance.RefColor.r, ColorReference.Instance.RefColor.g, ColorReference.Instance.RefColor.b., host.color.a);
+			host.color = newColor;
         }
 	}
 }

@@ -15,7 +15,7 @@ class ColorReference : MonoBehaviour
 		get
 		{
 			if(refSprite!=null)
-            return refSprite.color;
+				return refSprite.color;
 			return Color.white;
 		}
 	}
