@@ -146,7 +146,7 @@ MonoBehaviour:
   sleepTime: 0.1
   sleepRandomAdd: 0.8
   animCount: 3
-  randomDelay: 0
+  randomDelay: 0.1
   timeSince: 0
 --- !u!114 &114778445900031056
 MonoBehaviour:
@@ -190,7 +190,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 50e5f2c07f15b554e8984c201b35ca90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -230,7 +230,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0065b90d0c2bcc742ae69b9031e83322, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
