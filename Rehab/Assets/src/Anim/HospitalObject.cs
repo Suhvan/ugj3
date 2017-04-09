@@ -24,8 +24,6 @@ class HospitalObject : MonoBehaviour
 	public float randomDelay = 0;
 	public float timeSince = 0;
 
-
-
 	void Start()
 	{
 		randomDelay = startDelay;

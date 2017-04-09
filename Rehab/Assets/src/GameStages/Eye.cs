@@ -71,6 +71,11 @@ public class Eye : IGameStage
 		Completed = false;
 	}
 
+	protected virtual void onUpdate()
+	{
+
+	}
+
 	void Update () {
 
 		if (Completed)
@@ -79,6 +84,7 @@ public class Eye : IGameStage
 		if (GameCore.instance.stageState != CoreState.InProgress)
 			return;
 
+		onUpdate();
 		var speed = closingSpeed * resist;
 		speed-= openinigSpeed;
 
