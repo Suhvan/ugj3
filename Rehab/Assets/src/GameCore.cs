@@ -32,6 +32,7 @@ public class GameCore : MonoBehaviour {
 		else
 			instance = this;
 		Cursor.visible = false;
+		Application.targetFrameRate = 60;
 		DontDestroyOnLoad(transform.gameObject);
 	}	
 

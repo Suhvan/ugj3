@@ -76,7 +76,7 @@ public class Eye : IGameStage
 
 	}
 
-	void Update () {
+	void FixedUpdate () {
 
 		if (Completed)
 			return;
