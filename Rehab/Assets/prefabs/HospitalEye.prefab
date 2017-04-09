@@ -161,7 +161,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1509159748065158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4911907542287084}
@@ -191,7 +191,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167477641233646}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.8, z: 5}
+  m_LocalPosition: {x: 0, y: -3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4453575717320504}
@@ -218,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943900177982688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.8, z: 5}
+  m_LocalPosition: {x: 0, y: 3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4911907542287084}
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topVeko: {fileID: 1966162409963840}
   botVeko: {fileID: 1716936982326538}
-  closingSpeed: 3.5
+  closingSpeed: 3.8
   openingImpulse: 4
   openingDuration: 0.75
   declineCurve:
@@ -400,6 +400,39 @@ MonoBehaviour:
   music: {fileID: 82157306753612150}
   DaysCounter: {fileID: 114988658992109012}
   dayDuration: 10
+  resistDecayCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.26332512
+      value: 0.92277646
+      inSlope: 0.6105492
+      outSlope: 0.6105492
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.6064891
+      value: 0.84954745
+      inSlope: 0.5375379
+      outSlope: 0.5375379
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0.5
+      inSlope: -1.3332865
+      outSlope: -1.3332865
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  daysToResistDecay: 10
+  resistCoef: 0
+  evalVal: 0
 --- !u!114 &114631524763832470
 MonoBehaviour:
   m_ObjectHideFlags: 1

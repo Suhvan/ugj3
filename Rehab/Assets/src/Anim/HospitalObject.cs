@@ -21,8 +21,8 @@ class HospitalObject : MonoBehaviour
 
 	int curState = 0;
 
-	public float randomDelay = 0;
-	public float timeSince = 0;
+	float randomDelay = 0;
+	float timeSince = 0;
 
 	void Start()
 	{
@@ -58,14 +58,12 @@ class HospitalObject : MonoBehaviour
 
 	IEnumerator playAnim()
 	{
-		var rand = Random.Range(0, animCount).ToString();
-		Debug.Log("Result " + rand);
+		var rand = Random.Range(0, animCount).ToString();	
 		anim.Play("Empty");
 		anim.Play(rand);		
 		yield return null;
 		var info = anim.GetCurrentAnimatorStateInfo(0);
-		randomDelay += info.length;
-		Debug.Log("lngt "+ info.length);
+		randomDelay += info.length;		
 	}
 
 

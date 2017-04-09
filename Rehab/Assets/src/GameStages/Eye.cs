@@ -55,11 +55,11 @@ public class Eye : IGameStage
 		}
 	}
 
-	float resist
+	protected virtual float resist
 	{
 		get
 		{
-			return resistCurve.Evaluate(topVeko.transform.localPosition.y / yStopValue);
+			return closingSpeed * resistCurve.Evaluate(topVeko.transform.localPosition.y / yStopValue);
         }
 	}
 
@@ -85,7 +85,7 @@ public class Eye : IGameStage
 			return;
 
 		onUpdate();
-		var speed = closingSpeed * resist;
+		var speed = resist;
 		speed-= openinigSpeed;
 
 		float step = speed * Time.deltaTime;
