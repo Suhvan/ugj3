@@ -26,6 +26,23 @@ class HospitalEye : Eye
 
 	int daysCount = 1;
 
+	public AudioSource Music
+	{
+		get
+		{
+			return music;
+		}
+	}
+
+	public int Days
+	{
+		get
+		{
+			return daysCount;
+		}
+	}
+
+
 
 	private float partOfDay
 	{

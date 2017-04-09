@@ -13,4 +13,7 @@ EditorBuildSettings:
     guid: 82a69640948fa424ba3044abfb49a673
   - enabled: 1
     path: Assets/scenes/hospital.unity
-    guid: 00000000000000000000000000000000
+    guid: 76336356dcb8cd44888c10ddbe052710
+  - enabled: 1
+    path: Assets/scenes/gameOver.unity
+    guid: b16bf57da645a254e87a0aa5f3a8d78e

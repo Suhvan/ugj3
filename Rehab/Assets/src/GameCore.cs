@@ -83,13 +83,26 @@ public class GameCore : MonoBehaviour {
 				{
 					LoadStage(StageType.HospitalStage);
 				}
-				
 				return;
 			case StageType.HelpStage:
 				LoadStage(StageType.HospitalStage);
 				return;
+			case StageType.HospitalStage:
+				var hy = CurrentStage as HospitalEye;
+				if (hy != null && hy.Music != null)
+				{
+					days = hy.Days;
+					StartCoroutine(FadeOut(hy.Music, 1f, () => LoadStage(StageType.GameOver)));
+				}
+				else
+				{
+					LoadStage(StageType.GameOver);
+				}				
+                return;
 		}
 	}
+
+	int days = 5;
 
 	void OnEnable()
 	{		
@@ -103,17 +116,29 @@ public class GameCore : MonoBehaviour {
 
 	void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
 	{
-		DialogSystem = FindObjectOfType<DialogsCore>();
 		switch (m_curStageType)
 		{
 			case StageType.HandStage:
 				CurrentStage = FindObjectOfType<Hand>();
 				break;
 			default:
-			case StageType.HelpStage:
-				CurrentStage = FindObjectOfType<Eye>();
+			case StageType.GameOver:
+				CurrentStage = FindObjectOfType<GameOver>();
+				break;
+			case StageType.HospitalStage:
+				CurrentStage = FindObjectOfType<HospitalEye>();
 				break;
 		}
+
+		if (m_curStageType == StageType.GameOver)
+		{
+			var go = CurrentStage as GameOver;
+			go.setDays(days);
+			return;
+		}
+
+		DialogSystem = FindObjectOfType<DialogsCore>();
+		
 		InitStage();
     }
 

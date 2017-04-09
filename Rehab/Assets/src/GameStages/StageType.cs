@@ -3,7 +3,8 @@ public enum StageType
 {
 	HandStage,
 	HelpStage,
-	HospitalStage
+	HospitalStage,
+	GameOver
 }
 
 public static class StageTypeHelper
@@ -15,6 +16,8 @@ public static class StageTypeHelper
 		{
 			case StageType.HandStage:
 				return "hands";
+			case StageType.GameOver:
+				return "gameOver";
 			default:
 			case StageType.HelpStage:
 				return "first";
@@ -34,6 +37,8 @@ public static class StageTypeHelper
 				return StageType.HelpStage;
 			case "hospital":
 				return StageType.HospitalStage;
+			case "gameOver":
+				return StageType.GameOver;
         }
 	}
 }
