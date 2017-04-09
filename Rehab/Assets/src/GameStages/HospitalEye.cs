@@ -70,6 +70,7 @@ class HospitalEye : Eye
 		timeSinsePrevDay += Time.deltaTime;
 		if (timeSinsePrevDay > dayDuration)
 		{
+			GameCore.instance.DialogSystem.PlayNext();
 			daysCount++;
 			timeSinsePrevDay = 0;
 			DaysCounter.text = String.Format("{0}й ДЕНЬ", daysCount);

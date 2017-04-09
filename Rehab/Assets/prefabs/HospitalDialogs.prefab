@@ -159,6 +159,20 @@ MonoBehaviour:
   EndDialog:
   - doctor-the-end
   EndScreen: {fileID: 114891895821548018}
+  InProgresDialogs:
+  - monologue-2
+  - monologue-3
+  - monologue-4
+  - monologue-5
+  - monologue-6
+  - monologue-7
+  - monologue-8
+  - monologue-9
+  - monologue-10
+  - monologue-11
+  - monologue-12
+  - monologue-13
+  - monologue-14
 --- !u!114 &114891895821548018
 MonoBehaviour:
   m_ObjectHideFlags: 1

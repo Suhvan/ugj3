@@ -19,6 +19,11 @@ public class DialogsCore : MonoBehaviour {
 	[SerializeField]
 	private StoryScreen EndScreen;
 
+	[SerializeField]
+	private List<string> InProgresDialogs;
+
+	int count = 0;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -30,6 +35,17 @@ public class DialogsCore : MonoBehaviour {
 	void Update () {
     }
 
+
+	public void PlayNext()
+	{
+		if (InProgresDialogs == null)
+			return;
+
+		if (count >= InProgresDialogs.Count)		
+			return;
+
+		CreateDialog(InProgresDialogs[count++]);
+	}
 
 
 	public void OnGameStart(System.Action onComplete = null)
