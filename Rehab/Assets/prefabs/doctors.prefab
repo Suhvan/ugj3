@@ -143,9 +143,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 95595498417370810}
-  sleepTime: 1
-  sleepRandomAdd: 2
-  animCount: 2
+  sleepTime: 0.1
+  sleepRandomAdd: 0.8
+  animCount: 3
   randomDelay: 0
   timeSince: 0
 --- !u!114 &114778445900031056
