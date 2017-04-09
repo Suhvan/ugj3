@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cd94d2eff25b49c47a2f2720da2b6178
+timeCreated: 1491747406
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Ubuntu Condensed
+  fontNames:
+  - Ubuntu Condensed
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
