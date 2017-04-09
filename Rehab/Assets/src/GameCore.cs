@@ -72,7 +72,7 @@ public class GameCore : MonoBehaviour {
 		switch (m_curStageType)
 		{
 			case StageType.HandStage:
-				LoadStage(StageType.HelpStage);
+				LoadStage(StageType.HospitalStage);
 				return;
 			case StageType.HelpStage:
 				LoadStage(StageType.HospitalStage);

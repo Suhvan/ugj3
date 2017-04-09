@@ -220,6 +220,7 @@ MonoBehaviour:
     m_RotationOrder: 0
   target: {fileID: 0}
   pain: {fileID: 82552517232916426}
+  phone: {fileID: 0}
 --- !u!212 &212743205883937192
 SpriteRenderer:
   m_ObjectHideFlags: 1

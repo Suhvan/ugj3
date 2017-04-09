@@ -47,6 +47,9 @@ public class Hand : IGameStage
 	[SerializeField]
 	AudioSource pain;
 
+	[SerializeField]
+	AudioSource phone;
+
 
 	HandState m_state;
 	float m_targetDistance;
@@ -96,7 +99,8 @@ public class Hand : IGameStage
 	{
 		if (Completed)
 		{
-			pain.Stop();
+			phone.Stop();
+            pain.Stop();
 			return;
 		}
 
