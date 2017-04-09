@@ -15,14 +15,16 @@ Platform assembly: C:\Project\ugj3\build\rehub_Data\Managed\UnityEngine.UI.dll (
 Loading C:\Project\ugj3\build\rehub_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Project\ugj3\build\rehub_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Project\ugj3\build\rehub_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.028 seconds
+- Completed reload, in  0.019 seconds
 Platform assembly: C:\Project\ugj3\build\rehub_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Project\ugj3\build\rehub_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 3600x1089 at -1680,0
 <RI> Initializing input.
 <RI> Input initialized.
+desktop: 1680x1050 59Hz; virtual: 3600x1089 at -1680,0
+desktop: 1920x1080 60Hz; virtual: 3600x1089 at -1680,0
 <RI> Initialized touch support.
-UnloadTime: 1.032146 ms
+UnloadTime: 1.009694 ms
 Failed to load Text/phone-drop
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
@@ -35,62 +37,6 @@ Failed to load Text/guy-1
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
-Failed to load Text/girl-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/guy-2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 7 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.477014 ms
-Failed to load Text/monologue-1
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-
-Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 599.
-Total: 4.237958 ms (FindLiveObjects: 0.033036 ms CreateObjectMapping: 0.017320 ms MarkObjects: 0.219387 ms  DeleteObjects: 3.967893 ms)
-
-Failed to load Text/monologue-2
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/monologue-3
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/monologue-4
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/monologue-5
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/monologue-6
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/monologue-7
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/monologue-8
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Failed to load Text/doctor-the-end
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
-
-Unloading 4 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.481433 ms
-
-Unloading 62 unused Assets to reduce memory usage. Loaded Objects now: 368.
-Total: 2.480294 ms (FindLiveObjects: 0.012829 ms CreateObjectMapping: 0.014754 ms MarkObjects: 0.147861 ms  DeleteObjects: 2.304848 ms)
-
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: 1da4 -> priority: 1 
-  Thread -> id: 22e0 -> priority: 1 
+  Thread -> id: 2d60 -> priority: 1 
+  Thread -> id: 4224 -> priority: 1 

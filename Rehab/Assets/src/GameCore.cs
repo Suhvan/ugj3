@@ -31,6 +31,7 @@ public class GameCore : MonoBehaviour {
 			Destroy(this.gameObject);
 		else
 			instance = this;
+		Cursor.visible = false;
 		DontDestroyOnLoad(transform.gameObject);
 	}	
 
