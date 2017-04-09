@@ -70,7 +70,10 @@ public class DialogsCore : MonoBehaviour {
 	{
 		var txt = Resources.Load<TextAsset>("Text/" + clipName);
 		if (txt == null)
+		{			
 			Debug.LogError("Failed to load Text/" + clipName);
+			return string.Empty;
+        }
 		return txt.text;
 	}
 

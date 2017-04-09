@@ -159,7 +159,7 @@ public class Hand : IGameStage
 					return;
 				transform.Translate(Vector3.up * scrolVal);
 
-				Debug.Log(distance + " vs " + m_targetDistance);
+				//Debug.Log(distance + " vs " + m_targetDistance);
 
 				if (transform.localPosition.y >= yMax || distance  >= (m_targetDistance + PhoneTriggerDelta))
 					State = HandState.WaitingGrab;

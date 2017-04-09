@@ -228,6 +228,7 @@ MonoBehaviour:
   - start-game
   StartScreen: {fileID: 114103731020503852}
   EndDialog:
+  - body-drop
   - eye-1-end
   EndScreen: {fileID: 114412260435146844}
 --- !u!212 &212241949589163684
