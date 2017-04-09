@@ -63,7 +63,7 @@ class HospitalEye : Eye
 
 		if (!DaysCounter.gameObject.activeSelf)
 		{
-			DaysCounter.text = String.Format("{0}й ДЕНЬ", daysCount);
+			DaysCounter.text = String.Format("ДЕНЬ {0}", daysCount);
 			DaysCounter.gameObject.SetActive(true);
 		}
 
@@ -73,7 +73,7 @@ class HospitalEye : Eye
 			GameCore.instance.DialogSystem.PlayNext();
 			daysCount++;
 			timeSinsePrevDay = 0;
-			DaysCounter.text = String.Format("{0}й ДЕНЬ", daysCount);
+			DaysCounter.text = String.Format("ДЕНЬ {0}", daysCount);
 		}
 	}
 }
