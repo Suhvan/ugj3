@@ -333,11 +333,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4463217629795964, guid: c879bafd7855ee0488b524d74d23302a, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -348,7 +343,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4463217629795964, guid: c879bafd7855ee0488b524d74d23302a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4463217629795964, guid: c879bafd7855ee0488b524d74d23302a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -368,36 +363,6 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4463217629795964, guid: c879bafd7855ee0488b524d74d23302a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.data[1].time
-      value: 0.16330247
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.data[1].value
-      value: 0.54957867
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.data[1].inSlope
-      value: 1.9820313
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.data[1].outSlope
-      value: 1.9820313
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.data[2].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
-        type: 2}
-      propertyPath: resistCurve.m_Curve.Array.data[2].value
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

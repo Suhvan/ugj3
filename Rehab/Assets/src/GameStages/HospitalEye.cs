@@ -16,44 +16,15 @@ class HospitalEye : Eye
 	[SerializeField]
 	float dayDuration = 10f;
 
-	[SerializeField]
-	AnimationCurve resistDecayCurve;
-
-	[SerializeField]
-	int daysToResistDecay = 1;
-
 	float timeSinsePrevDay = 0;
 
 	int daysCount = 1;
 
 
-	private float partOfDay
-	{
-		get
-		{
-			if (dayDuration == 0)
-				return 0;
-			return timeSinsePrevDay / dayDuration;
-        }
-		
-	}
-	public float resistCoef;
-	public float evalVal;
-
 	void Start()
 	{
 		DaysCounter.gameObject.SetActive(false);
     }
-
-	protected override float resist
-	{
-		get
-		{
-			evalVal = (float)((daysCount - 1) + partOfDay) / (float)daysToResistDecay;
-            resistCoef = resistDecayCurve.Evaluate(evalVal);
-            return base.resist * resistCoef;
-		}
-	}
 
 	protected override void onUpdate()
 	{
