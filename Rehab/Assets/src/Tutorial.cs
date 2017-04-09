@@ -8,11 +8,15 @@ public class Tutorial : MonoBehaviour {
 	{
 		MouseUp,
 		MouseDown,
-		SpaceHold
+		SpaceHold,
+		SpacePress
 	}
 
 	[SerializeField]
 	GameObject holdSpace;
+
+	[SerializeField]
+	GameObject pressSpace;
 
 	[SerializeField]
 	GameObject mouseUp;
@@ -64,6 +68,10 @@ public class Tutorial : MonoBehaviour {
 			case TutType.SpaceHold:
 				holdSpace.SetActive(active);
 				break;
+			case TutType.SpacePress:
+				pressSpace.SetActive(active);
+				break;
+
 		}
 	}
 }

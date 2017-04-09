@@ -42,8 +42,6 @@ class HospitalEye : Eye
 		}
 	}
 
-
-
 	private float partOfDay
 	{
 		get
@@ -72,10 +70,34 @@ class HospitalEye : Eye
 		}
 	}
 
+	int tutStage = 0;
+
+
+	private void ProceedTutorial()
+	{
+		if (tutStage == 0)
+		{
+			tutStage++;			
+			Tutorial.instance.StartTutorial(Tutorial.TutType.SpacePress);
+		}
+
+		if (tutStage < 10 && Input.GetKeyUp(KeyCode.Space))
+		{
+			tutStage++;			
+		}
+
+		if (tutStage == 10)
+		{
+			tutStage++;
+            Tutorial.instance.StopTutorial(Tutorial.TutType.SpacePress);
+		}
+	}
+
 	protected override void onUpdate()
 	{
 		base.onUpdate();
-		if (!music.isPlaying)
+		ProceedTutorial();
+        if (!music.isPlaying)
 			music.Play();
 
 		if (!DaysCounter.gameObject.activeSelf)
