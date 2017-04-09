@@ -829,6 +829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_curStageType: 0
+  backGroundMusic: {fileID: 1944484684}
 --- !u!4 &1476693654
 Transform:
   m_ObjectHideFlags: 0

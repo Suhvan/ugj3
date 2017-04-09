@@ -20,6 +20,9 @@ public class GameCore : MonoBehaviour {
 	[SerializeField]
 	StageType m_curStageType;
 
+	[SerializeField]
+	AudioSource backGroundMusic;
+
 	public CoreState stageState { get; private set; }
 	
 	void Awake()
@@ -72,7 +75,15 @@ public class GameCore : MonoBehaviour {
 		switch (m_curStageType)
 		{
 			case StageType.HandStage:
-				LoadStage(StageType.HospitalStage);
+				if (backGroundMusic != null)
+				{
+					StartCoroutine(FadeOut(backGroundMusic, 1f, () => LoadStage(StageType.HospitalStage)));
+				}
+				else
+				{
+					LoadStage(StageType.HospitalStage);
+				}
+				
 				return;
 			case StageType.HelpStage:
 				LoadStage(StageType.HospitalStage);
@@ -104,6 +115,23 @@ public class GameCore : MonoBehaviour {
 				break;
 		}
 		InitStage();
+    }
+
+	public static IEnumerator FadeOut(AudioSource audioSource, float FadeTime, System.Action onEnd)
+	{
+		float startVolume = audioSource.volume;
+
+		while (audioSource.volume > 0)
+		{
+			audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
+
+			yield return null;
+		}
+
+		audioSource.Stop();
+		audioSource.volume = startVolume;
+
+		onEnd();
     }
 
 }
