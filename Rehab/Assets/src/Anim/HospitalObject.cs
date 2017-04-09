@@ -8,6 +8,9 @@ class HospitalObject : MonoBehaviour
 	Animator anim;
 
 	[SerializeField]
+	float startDelay = 2f;
+
+	[SerializeField]
 	float sleepTime = 1f;
 
 	[SerializeField]
@@ -25,7 +28,7 @@ class HospitalObject : MonoBehaviour
 
 	void Start()
 	{
-		
+		randomDelay = startDelay;
     }
 
 	void SetRandomDelay()
@@ -36,7 +39,13 @@ class HospitalObject : MonoBehaviour
 
 	
 	void Update()
-	{	
+	{
+
+		if (GameCore.instance != null && GameCore.instance.stageState != CoreState.InProgress )
+		{
+			return;
+		}
+
 		timeSince += Time.deltaTime;
 
 		if (timeSince > randomDelay)
