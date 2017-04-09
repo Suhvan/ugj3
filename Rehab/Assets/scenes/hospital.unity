@@ -225,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_curStageType: 2
+  backGroundMusic: {fileID: 0}
 --- !u!4 &234823230
 Transform:
   m_ObjectHideFlags: 0
@@ -331,6 +332,36 @@ Prefab:
         type: 2}
       propertyPath: m_Volume
       value: 0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
+        type: 2}
+      propertyPath: dayDuration
+      value: 6.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
+        type: 2}
+      propertyPath: daysToResistDecay
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
+        type: 2}
+      propertyPath: resistDecayCurve.m_Curve.Array.data[2].value
+      value: 0.82421786
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
+        type: 2}
+      propertyPath: resistDecayCurve.m_Curve.Array.data[2].time
+      value: 0.6064891
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
+        type: 2}
+      propertyPath: resistDecayCurve.m_Curve.Array.data[1].value
+      value: 0.9128659
+      objectReference: {fileID: 0}
+    - target: {fileID: 114605761199818762, guid: c879bafd7855ee0488b524d74d23302a,
+        type: 2}
+      propertyPath: resistDecayCurve.m_Curve.Array.data[1].time
+      value: 0.27760735
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c879bafd7855ee0488b524d74d23302a, type: 2}
