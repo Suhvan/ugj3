@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,12 +48,20 @@ public class Tutorial : MonoBehaviour {
 
 	public void StartTutorial(TutType tt)
 	{
+		foreach (TutType tut in Enum.GetValues(typeof(TutType)))
+		{
+			if (tut != tt)
+				SetActive(tut, false);
+		}
 		SetActive(tt, true);
 	}
 
-	public void StopTutorial(TutType tt)
+	public void StopAllTutorials()
 	{
-		SetActive(tt, false);
+		foreach (TutType tut in Enum.GetValues(typeof(TutType)))
+		{	
+			SetActive(tut, false);
+		}
 	}
 
 	private void SetActive(TutType tt, bool active)

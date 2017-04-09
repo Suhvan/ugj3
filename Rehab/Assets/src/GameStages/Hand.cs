@@ -109,7 +109,6 @@ public class Hand : IGameStage
 			if (State == HandState.WaitingGrab)
 			{
 				tutStage++;
-                Tutorial.instance.StopTutorial(Tutorial.TutType.MouseUp);
 				Tutorial.instance.StartTutorial(Tutorial.TutType.SpaceHold);
 			}
 		}
@@ -118,8 +117,7 @@ public class Hand : IGameStage
 		{
 			if (State == HandState.Grabing)
 			{
-				tutStage++;
-				Tutorial.instance.StopTutorial(Tutorial.TutType.SpaceHold);
+				tutStage++;				
 				Tutorial.instance.StartTutorial(Tutorial.TutType.MouseDown);
 			}
         }
@@ -129,7 +127,7 @@ public class Hand : IGameStage
 			if (State != HandState.Grabing)
 			{
 				tutStage++;
-				Tutorial.instance.StopTutorial(Tutorial.TutType.MouseDown);				
+				Tutorial.instance.StopAllTutorials();
 			}
 		}
 	}
@@ -139,8 +137,7 @@ public class Hand : IGameStage
 	{
 		if (Completed)
 		{
-			phone.Stop();
-            pain.Stop();
+		
 			return;
 		}
 
@@ -167,6 +164,9 @@ public class Hand : IGameStage
 			case HandState.Grabing:
 				if (distance >= m_targetDistance - PhoneTriggerDelta)
 				{
+					Tutorial.instance.StopAllTutorials();
+					phone.Stop();
+					pain.Stop();
 					Completed = true;
 					return;
 				}

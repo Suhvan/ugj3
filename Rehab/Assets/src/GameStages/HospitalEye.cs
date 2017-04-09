@@ -89,7 +89,7 @@ class HospitalEye : Eye
 		if (tutStage == 10)
 		{
 			tutStage++;
-            Tutorial.instance.StopTutorial(Tutorial.TutType.SpacePress);
+			Tutorial.instance.StopAllTutorials();
 		}
 	}
 
