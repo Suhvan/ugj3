@@ -15,7 +15,7 @@ public class ColorDependent : MonoBehaviour {
 	void Update () {
 		if (host != null && ColorReference.Instance != null)
 		{	
-			var newColor = new Color(ColorReference.Instance.RefColor.r, ColorReference.Instance.RefColor.g, ColorReference.Instance.RefColor.b., host.color.a);
+			var newColor = new Color(ColorReference.Instance.RefColor.r, ColorReference.Instance.RefColor.g, ColorReference.Instance.RefColor.b, host.color.a);
 			host.color = newColor;
         }
 	}
