@@ -32,7 +32,6 @@ public class DialogLine : MonoBehaviour {
 		audioSource.Play();
 		StartCoroutine(DestryIn(audioSource.clip.length));
 	}
-
 	
 
 	private IEnumerator DestryIn(float seconds)
