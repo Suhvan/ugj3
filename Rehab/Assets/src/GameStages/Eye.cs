@@ -40,7 +40,7 @@ public class Eye : IGameStage
 	{
 		get
 		{
-			if (Input.anyKeyDown)
+			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				timeSinceOpen = 0;
 			}
